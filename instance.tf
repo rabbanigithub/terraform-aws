@@ -10,4 +10,21 @@ resource "aws_instance" "simpleweb" {
 
   # public SSH key
   key_name = aws_key_pair.simpleweb_keypair.key_name
+
+  provisioner "file" {
+    source      = "script.sh"
+    destination = "/tmp/script.sh"
+  }
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /tmp/script.sh",
+      "sudo /tmp/script.sh",
+    ]
+  }
+  connection {
+    host        = coalesce(self.private_ip, self.public_ip)
+    type        = "ssh"
+    user        = var.INSTANCE_USERNAME
+    private_key = file(var.PATH_TO_PRIVATE_KEY)
+  }
 }

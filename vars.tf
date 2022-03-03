@@ -22,3 +22,7 @@ variable "AMIS" {
     us-west-1 = "ami-0573b70afecda915d"
   }
 }
+
+variable "INSTANCE_USERNAME" {
+  default = "ec2-user"
+}
