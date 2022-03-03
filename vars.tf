@@ -7,11 +7,11 @@ variable "INSTANCE_TYPE" {
 }
 
 variable "PATH_TO_PRIVATE_KEY" {
-  default = "simpleweb_keypair"
+  default = "simpleweb_sshkey"
 }
 
 variable "PATH_TO_PUBLIC_KEY" {
-  default = "simpleweb_keypair.pub"
+  default = "simpleweb_sshkey.pub"
 }
 
 variable "AMIS" {
