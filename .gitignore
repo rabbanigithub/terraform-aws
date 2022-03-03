@@ -1,0 +1,4 @@
+simpleweb_sshkey
+simpleweb_sshkey.pub
+terraform.tfstate
+terraform.tfstate.backup
