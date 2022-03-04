@@ -4,6 +4,9 @@ resource "aws_instance" "simpleweb" {
   tags = {
     Name = "Simple Web"
   }
+  
+  # VPC subnet
+  subnet_id = aws_subnet.tf_private_a.id
 
   # security group
   vpc_security_group_ids = [aws_security_group.simpleweb_sg.id]
