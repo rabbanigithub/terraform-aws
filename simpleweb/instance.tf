@@ -4,7 +4,7 @@ resource "aws_instance" "simpleweb" {
   tags = {
     Name = "Simple Web"
   }
-  
+
   # VPC subnet
   subnet_id = aws_subnet.tf_public_a.id
 
